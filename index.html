@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>หน้าแรกของวิทยาลัยเทคนิคสัตหีบ</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(45deg, #0995c0, #e42fdb, #f7277a); /* Gradient Background */
+            color: white;
+            padding: 1em 2em;
+            position: relative;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow */
+        }
+
+        header .logo {
+            font-size: 2.0em;
+            font-weight: bold;
+            margin: 0;
+            padding: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Shadow */
+        }
+
+        header nav {
+            margin-top: 1em;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            margin: 0 15px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+            transition: color 0.3s, background-color 0.3s;
+        }
+
+        header nav a:hover {
+            background-color: #6599ff;
+            color: #f5f5f5;
+            border-radius: 4px;
+        }
+
+        header nav a:hover {
+            background-color: rgba(255, 255, 255, 0.4); /* Lighter on hover */
+            color: #ffffff; /* Dark blue text on hover */
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Shadow on hover */
+        }
+
+        .hero {
+            position: relative;
+            height: 88vh;
+            overflow: hidden;
+            background: linear-gradient (135deg, #6599ff, #002f71); /* Overlay color */
+        }
+
+        .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            animation: zoom 20s infinite; /* Zoom animation */
+            transition: filter 0.3s ease; /* Add transition for filter changes */
+        }
+
+            .hero:hover img {
+            filter: brightness(70%); /* Darken the image on hover */
+            }
+
+            @keyframes zoom {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+            z-index: 2;
+        }
+
+        .hero-content h1 {
+            font-size: 3em;
+            margin: 0;
+            padding: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero-content p {
+            font-size: 1.2em;
+            margin: 0;
+            padding: 0;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+        }
+
+        .cta {
+            background: linear-gradient(135deg, #0995c0, #191919, #f7277a);
+            display: flex;
+            justify-content: center;
+            padding: 0.5em 0;
+        }
+
+        .cta a {
+            background: linear-gradient (135deg, #6599ff, #002f71);
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .cta a:hover {
+            background: #0995c0 ;
+        }
+
+        .content {
+            padding: 2em 1em;
+            text-align: center;
+        }
+
+        .content h2 {
+            font-size: 2em;
+            margin-bottom: 1em;
+        }
+
+        .content p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        footer {
+            background-color: #191919;
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Thai-Austrian Technical College</div>
+        <nav>
+            <a href="http://thai-austrian.tatc.ac.th">วิทยาลัยเทคนิคสัตหีบ</a>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <img src="BIGBAND.jpg" alt="แบนเนอร์ใหญ่">
+    </div>
+    <footer>
+        <div class="cta">
+            <a href="SIZE_1.html">เรียนรู้เพิ่มเติม</a>
+        </div>
+        <div class="content">
+            <br>
+            +
+            <br>
+            <br>
+            <br>
+            <p>
+                วิทยาลัยเทคนิคสัตหีบเป็นสถาบันการศึกษาที่มุ่งเน้นการพัฒนาทักษะทางด้านเทคโนโลยีและวิชาชีพ เพื่อเตรียมความพร้อมให้กับนักศึกษาในด้านการทำงานและการเรียนรู้ที่ไม่สิ้นสุด
+            </p>
+        </div>
+        <p>&copy; 2024 วิทยาลัยเทคนิคสัตหีบ. Nattawat@_nttwac.9</p>
+    </footer>
+</body>
+</html>
