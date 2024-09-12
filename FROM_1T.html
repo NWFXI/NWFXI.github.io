@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>วิทยาลัยเทคนิคสัตหีบ - สมัครสมาชิก</title>
+    <style>
+        /* CSS ทั่วไป */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: font 'TH SarabunPSK' , sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        #backToTopBtn {
+            display: none; /* ซ่อนไว้ก่อนจนกว่าจะเลื่อนลง */
+            position: fixed;
+            bottom: 20px;
+            left: 50%; /* วางปุ่มไว้ตรงกลางจอ */
+            width: 3.5%;
+            transform: translateX(-50%); /* ย้ายปุ่มกลับมาครึ่งหนึ่งของตัวมันเองเพื่อให้อยู่ตรงกลาง */
+            right: 20px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: #3498db;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 50px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        #backToTopBtn:hover {
+            background-color: #555;
+            transform: translateX(-50%) scale(1.1);
+        }
+
+        .container {
+            width: 95%;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 2, 0.1);
+            overflow: hidden;
+        }
+
+        header {
+            position: relative;
+            text-align: center;
+            color: white;
+            padding: 0;
+        }
+
+        header img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px 8px 0 0;
+        }
+
+        header h1, header h3 {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            padding: 0.5em;
+        }
+
+        header h3 {
+            top: 100%;
+            margin: 0;
+            font-size: 1.5em;
+            font-weight: normal;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            background: linear-gradient(45deg, #0995c0, #e42fdb, #f7277a);
+            border-radius: 8px;
+        }
+
+        nav {
+            background: linear-gradient(90deg, #0995c0, #ffffff);
+            color: white;
+            padding: 2em 1em;
+            min-height: 100%;
+            width: 250px;
+            float: left;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin: 20px 0;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.2em;
+            display: block;
+            padding: 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s, border-radius 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #c754e4;
+            transform: translateX(20px) scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+        }
+
+        article {
+            margin-left: 270px;
+            margin-right: 220px;
+            padding: 2em;
+        }
+
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 650px;
+            margin: 20px auto;
+            font-size: 1.0em;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 1.5em;
+        }
+
+        form label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #555;
+            font-size: 1.0em;
+        }
+
+        form input,
+        form select,
+        form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1.0em;
+            padding: 5px;
+        }
+
+        form textarea {
+            height: 80px;
+            resize: none;
+        }
+
+        .gender-group {
+            margin-bottom: 15px;
+        }
+
+        .gender-group label {
+            display: inline-block;
+            margin-right: 15px;
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .button-group button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button[type="submit"] {
+            background-color: #28a745;
+            color: #fff;
+        }
+
+        button[type="reset"] {
+            background-color: #dc3545;
+            color: #fff;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <button onclick="topFunction()" id="backToTopBtn" title="Go to top">▲</button>
+        <header>
+            <img src="011111.png" alt="แบนเนอร์">
+            <h1>วิทยาลัยเทคนิคสัตหีบ</h1>
+            <h3>Thai-Austrian Technical College</h3>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="HOME.html"><img src="home.png" style="width: 20px; height: 20px; vertical-align: middle; 
+                    margin-right: 10px;">หน้าแรก</a></li>
+                    <li><a href="SIZE_1.html"><img src="menu-burger.png" style="width: 20px; height: 20px; vertical-align: middle; 
+                    margin-right: 10px;">ประวัติความเป็นมา</a></li>
+                    <li><a href="SIZE_2.html"><img src="apps.png" style="width: 20px; height: 20px; vertical-align: middle; 
+                    margin-right: 10px;">อัตลักษณ์</a></li>
+                    <li><a href="SIZE_3.html"><img src="cube.png" style="width: 20px; height: 20px; vertical-align: middle; 
+                    margin-right: 10px;">ปรัชญา</a></li>
+                    <li><a href="SIZE_4.html"><img src="list.png" style="width: 20px; height: 20px; vertical-align: middle; 
+                    margin-right: 10px;">นโยบาย</a></li>
+                    <li><a href="SIZE_5.html"><img src="users-alt.png" style="width: 20px; height: 20px; vertical-align: middle; 
+                    margin-right: 10px;">ทำเนียม</a></li>
+                    <li><a href="About.html"><img src="portrait.png" style="width: 20px; height: 20px; vertical-align: middle; 
+                    margin-right: 10px;">ผู้จัดทำ</a></li>
+                    <li><a href="WorkWA.html"><img src="notebook.png" style="width: 20px; height: 20px; vertical-align: middle; 
+                    margin-right: 10px;">ใบความรู้</a></li>
+                    <li><a href="FROM_1T.html"><img src="sign.png" style="width: 20px; height: 20px; vertical-align: middle; 
+                    margin-right: 10px;">ล็อกอิน</a></li>
+                    <img src="ImageHI.png" alt="ภาพยาว" style="width:99.9%; height: auto; vertical-align: 
+                    middle; margin-right: 10px;">
+            </ul>
+        </nav>
+        <article>
+            <div class="form-container">
+                <h2>สมัครสมาชิก</h2>
+                <form action="#" method="POST">
+                    <label for="fullname">ชื่อ-นามสกุล</label>
+                    <input type="text" id="fullname" name="fullname" required>
+
+                    <label for="dob">วัน/เดือน/ปีเกิด</label>
+                    <input type="date" id="dob" name="dob" required>
+
+                    <label>เพศ (ไม่บังคับ)</label>
+                    <center>
+                    <div class="gender-group">
+                        <label>
+                            <input type="radio" name="gender" value="male"> ชาย
+                        </label>
+                        <label>
+                            <input type="radio" name="gender" value="female"> หญิง
+                        </label>
+                        <label>
+                            <input type="radio" name="gender" value="other"> อื่นๆ
+                        </label>
+                        <label>
+                            <input type="radio" name="gender" value="unspecified"> ไม่ระบุ
+                        </label>
+                    </div>
+                </center>
+
+                    <label for="status">สถานะ</label>
+                    <select id="status" name="status" required>
+                        <option value="single">โสด</option>
+                        <option value="married">มีแฟน</option>
+                        <option value="married">ม่าย</option>
+                        <option value="married">ไม่แน่ใจ</option>
+                        <option value="married">แต่งงานแล้ว</option>
+                    </select>
+
+                    <label for="religion">ศาสนา (ระบุ)</label>
+                    <input type="text" id="religion" name="religion" required>
+
+                    <label for="address">ที่อยู่</label>
+                    <textarea id="address" name="address" required></textarea>
+
+                    <label for="phone">เบอร์โทร +66</label>
+                    <input type="tel" id="phone" name="phone" required>
+
+                    <label for="email">อีเมล</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="password">รหัสผ่าน</label>
+                    <input type="password" id="password" name="password" required>
+
+                    <div class="button-group">
+                        <button type="submit">ตกลง</button>
+                        <button type="reset">ยกเลิก</button>
+                    </div>
+                </form>
+            </div>
+        </article>
+    </div>
+    <script>
+        // รับปุ่ม
+        var backToTopBtn = document.getElementById("backToTopBtn");
+    
+        // เมื่อเลื่อนลง 300px จากด้านบนของหน้าจอ ปุ่มจะปรากฏ
+        window.onscroll = function() {
+            scrollFunction();
+        };
+    
+        function scrollFunction() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                backToTopBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        }
+    
+        // เมื่อกดปุ่ม เลื่อนไปที่ด้านบนของเอกสาร
+        function topFunction() {
+            document.body.scrollTop = 0; // สำหรับ Safari
+            document.documentElement.scrollTop = 0; // สำหรับ Chrome, Firefox, IE และ Opera
+        }
+    </script>
+</body>
+</html>
